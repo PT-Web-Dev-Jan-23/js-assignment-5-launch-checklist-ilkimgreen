@@ -23,9 +23,9 @@ function validateInput(testInput) {
         return "Empty"
     }
     else if (isNaN(testInput)) {
-        return "is a Number"
+        return "Is a Number"
     }
-    else {return "is not a Number"}
+    else {return "Not a Number"}
 }
 
 
@@ -41,10 +41,10 @@ function formSubmission(document,pilot,copilot,fuelLevel,cargoMass) {
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
         alert("All fields are required!");
     }
-    else if (validateInput(pilot)!== "is a Number" || validateInput(copilot) !== "is a Number") {
+    else if (validateInput(pilot)!== "Is a Number" || validateInput(copilot) !== "Is a Number") {
         alert("Name required");
     }
-    else if (validateInput(fuelLevel) !== "is not a Number" || validateInput(cargoMass) !== "is not a Number") {
+    else if (validateInput(fuelLevel) !== "Not a Number" || validateInput(cargoMass) !== "Not a Number") {
         alert("Number required");
     }
 
