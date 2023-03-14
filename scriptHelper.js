@@ -89,17 +89,23 @@ function formSubmission(document,pilot,copilot,fuelLevel,cargoMass) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
-    return response.json()
-});
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+            if (response.status >= 400) {
+                throw new Error ("Bad response");
+            }
+            else {
+                return response.json();
+            }
+        });
 
     return planetsReturned;
 }
 
-function pickPlanet(planets) {
-let planet = Math.floor(Math.random()* planets.length)
-return planets[planet]
 
+
+function pickPlanet(planets) {
+    let planet = Math.floor(Math.random()* planets.length)
+    return planets[planet]
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
