@@ -39,7 +39,7 @@ function formSubmission(document,pilot,copilot,fuelLevel,cargoMass) {
     let list = document.getElementById("faultyItems");
 
 
-    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
+    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
         alert("All fields are required!");
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number" ) {
         alert("Please make sure to enter valid information for each field!");
@@ -49,17 +49,17 @@ function formSubmission(document,pilot,copilot,fuelLevel,cargoMass) {
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready!`;
         let launchStatus = document.getElementById("launchStatus");
         
-        if (fuelLevel < 10000 && cargoLevel <= 10000) {
+        if (fuelLevel < 10000 && cargoMass <= 10000) {
             fuel.innerHTML = `Fuel level: ${fuelLevel} is too low!`;
             cargo.innerHTML = `Cargo mass: ${cargoMass} is too low!`
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
 
-        } else if (fuelLevel >= 10000 && cargoLevel > 10000) {
+        } else if (fuelLevel >= 10000 && cargoMass > 10000) {
             fuel.innerHTML = `Fuel level: ${fuelLevel} is good for launch!`;
             cargo.innerHTML = `Cargo mass: ${cargoMass} is too heavy!`;
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
 
-        } else if (fuelLevel < 10000 && cargoLevel > 10000) {
+        } else if (fuelLevel < 10000 && cargoMass > 10000) {
             fuel.innerHTML = `Fuel level: ${fuelLevel} is too low!`;
             cargo.innerHTML = `Cargo mass: ${cargoMass} is too heavy!`;
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
