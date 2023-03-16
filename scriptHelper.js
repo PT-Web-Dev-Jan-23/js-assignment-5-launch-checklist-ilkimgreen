@@ -55,7 +55,7 @@ function formSubmission(document,pilot,copilot,fuelLevel,cargoMass) {
         document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         document.getElementById("launchStatus").style.color = "red";
-        readyForTakeOff = false;
+        readyToTakeOff = false;
     } else {
         document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
     }
@@ -67,17 +67,17 @@ function formSubmission(document,pilot,copilot,fuelLevel,cargoMass) {
         document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         document.getElementById("launchStatus").style.color = "red";
-        readyForTakeOff = false;
+        readyToTakeOff = false;
     } else {
         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
     }
 
-    if (readyForTakeOff) {
+    if (readyToTakeOff) {
         document.getElementById("launchStatus").innerHTML = "Shuttle is Ready for Launch";
         document.getElementById("launchStatus").style.color = "green";
         list.style.visibility = 'visible';
     }
-    return readyForTakeOff;
+    return readyToTakeOff;
 }
    
 
