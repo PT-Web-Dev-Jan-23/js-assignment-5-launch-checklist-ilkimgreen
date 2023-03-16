@@ -12,8 +12,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                      <li>Distance from Earth: ${distance} </li>
                      <li>Number of Moons: ${moons} </li>
                  </ol>
-                 <img src="${imageUrl}"></img>
-                 `
+                 <img src="${imageUrl}">`;
     
 } 
 
@@ -36,11 +35,15 @@ function formSubmission(document,pilot,copilot,fuelLevel,cargoMass) {
     let cargo = document.getElementById('cargoStatus');
     let list = document.getElementById("faultyItems");
 
+ 
+
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
         alert("All fields are required!");
+        
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number" ) {
         alert("Please make sure to enter valid information for each field!");
+        
     } else {
         list.style.visibility = "visible";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready!`;
