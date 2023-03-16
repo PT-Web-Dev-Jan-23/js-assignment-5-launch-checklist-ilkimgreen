@@ -49,7 +49,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("faultyItems").style.visibility = 'visible';
         document.getElementById("pilotStatus").innerHTML =`Pilot ${pilot} is ready for launch`;
         document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is ready for launch`;
-        document.getElementById("fuelStatus").innerHTML = `Fuel level is too low for launch`
+        document.getElementById("fuelStatus").innerHTML = `Fuel level too low for launch`
         document.getElementById("launchStatus").innerHTML = 'Shuttle Not Ready for Launch';
         document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)";
         readyToTakeOff = false
